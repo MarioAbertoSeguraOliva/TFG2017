@@ -8,3 +8,8 @@ TFG2017/lib/javaee-endorsed-api-7.0/javax.xml.soap-api.jar
 TFG2017/lib/javaee-endorsed-api-7.0/jaxb-api-osgi.jar
 TFG2017/lib/javaee-endorsed-api-7.0/jaxws-api.jar
 TFG2017/lib/javaee-endorsed-api-7.0/jsr181-api.jar
+TFG2017/TFG2017-ejb/build/classes/META-INF/MANIFEST.MF
+TFG2017/TFG2017-ejb/dist/TFG2017-ejb.jar
+TFG2017/TFG2017-war/build/web/META-INF/MANIFEST.MF
+TFG2017/TFG2017-war/build/web/gfv3ee6.dpf
+TFG2017/TFG2017-war/build/web/index.html
