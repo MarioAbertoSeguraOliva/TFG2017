@@ -33,4 +33,12 @@ public class Coach_ {
     //
     // @Test
     // public void hello() {}
+    
+    @Test 
+    public void can_creates_training_document(){
+        Coach coach = new Coach();
+        Training training = coach.createTrainingFile("2017-11-28");
+        assertEquals(coach, training.getCoachs());
+        //training.getDate();
+    }
 }
