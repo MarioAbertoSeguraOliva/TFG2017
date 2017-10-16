@@ -1,6 +1,5 @@
 package servlets;
 
-import entity.Account;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.net.MalformedURLException;
@@ -11,7 +10,6 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import entity.Account;
 
 public class MainServlet extends HttpServlet {
 
@@ -22,7 +20,7 @@ public class MainServlet extends HttpServlet {
      * @throws IOException if an I/O error occurs
      */
     
-    private String JNDI_PORTABLE_NAME_FOR_ACCOUNT_FACADE = "java:global/Client/AccountFacade";
+    private final String JNDI_PORTABLE_NAME_FOR_ACCOUNT_FACADE = "java:global/Client/AccountFacade";
     //@EJB
     //Account account;
     

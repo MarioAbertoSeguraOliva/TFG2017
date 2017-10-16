@@ -1,62 +1,50 @@
-package servlets;
+package servlets.training;
 
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.text.SimpleDateFormat;
-import java.time.Instant;
 import java.util.Date;
-import java.util.logging.Level;
-import java.util.logging.Logger;
-import javafx.scene.image.Image;
-import javax.ejb.EJB;
-import javax.naming.InitialContext;
-import javax.naming.NamingException;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import session.TrainingFacadeLocal;
 
-public class Training extends HttpServlet {
+public class CreateTraining extends HttpServlet {
 
     /**
+     * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
+     * methods.
+     *
      * @param request servlet request
      * @param response servlet response
      * @throws ServletException if a servlet-specific error occurs
      * @throws IOException if an I/O error occurs
      */
-    
-    @EJB
-    TrainingFacadeLocal training;
-    private String jndi_path = "java:global/Client/TrainingFacade!session.TrainingFacadeLocal";
-    
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
-        
-        try {
-            training =  (TrainingFacadeLocal) InitialContext.doLookup(jndi_path);
-        } catch (NamingException ex) {
-            Logger.getLogger(Training.class.getName()).log(Level.SEVERE, null, ex);
-        }
-        
         try (PrintWriter out = response.getWriter()) {
+            /* TODO output your page here. You may use following sample code. */
             out.println("<!DOCTYPE html>");
             out.println("<html>");
-            
             out.println("<head>");
-            out.println("<title>Training</title>");            
+            out.println("<title>Servlet CreateTraining</title>");            
             out.println("</head>");
-            
             out.println("<body>");
-            out.println("<h1>Entrenamientos</h1>");
             
-            out.println("<div>");
-            out.println("<img src=images/CoachRossi.jpg>");
+            SimpleDateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy");
+            String today = dateFormat.format(new Date());
+            
+             out.println("<div>");
+            out.println("<form>");
+            out.println("Fecha de Hoy:"+today+" <input type=date value="+today+"/><br><br>");
+            out.println("Entreno: <textarea placeholder=\"Esto es un prueba de entreno piloto\"></textarea> <br><br>");
+            out.println("Entrenador: Juan Ramirez<input type=text><br><br>");
+            out.println("Atletas: {Grupo1}, Alex, Fran, Esteban, Melisa<input type=text><br><br>");
+            out.println("<input type=\"submit\" value=\"Enviar\"><br>");
+            out.println("</form>");
             out.println("</div>");
             
-            out.println("<form action=CreateTraining><input type=submit value=\"Crear Entreno\"></form><br><br>");
-            out.println("<form action=ListTraining><input type=\"submit\" value=\"Revisar Entrenos\"></form><br><br>");
             out.println("</body>");
             out.println("</html>");
         }
