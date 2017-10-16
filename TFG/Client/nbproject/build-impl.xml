@@ -1040,7 +1040,7 @@ exists or setup the property manually. For example like this:
         <copyfiles files="${reference.Business.dist}" todir="${build.web.dir}/WEB-INF/lib"/>
     </target>
     <target depends="init" if="dist.ear.dir" name="-clean-webinf-lib">
-        <delete dir="${build.web.dir}/WEB-INF/lib"/>
+        
     </target>
     <target depends="init,-clean-webinf-lib,compile,compile-jsps,-pre-dist,library-inclusion-in-manifest" if="do.tmp.war.package" name="do-ear-dist">
         <dirname file="${dist.ear.war}" property="dist.jar.dir"/>
