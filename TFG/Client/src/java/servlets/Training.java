@@ -2,12 +2,8 @@ package servlets;
 
 import java.io.IOException;
 import java.io.PrintWriter;
-import java.text.SimpleDateFormat;
-import java.time.Instant;
-import java.util.Date;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import javafx.scene.image.Image;
 import javax.ejb.EJB;
 import javax.naming.InitialContext;
 import javax.naming.NamingException;
@@ -28,7 +24,7 @@ public class Training extends HttpServlet {
     
     @EJB
     TrainingFacadeLocal training;
-    private String jndi_path = "java:global/Client/TrainingFacade!session.TrainingFacadeLocal";
+    private final String jndi_path = "java:global/Client/TrainingFacade!session.TrainingFacadeLocal";
     
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {

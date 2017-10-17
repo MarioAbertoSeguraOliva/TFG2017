@@ -118,7 +118,11 @@ public class Training implements Serializable {
 
     @Override
     public String toString() {
-        return "entity.Training[ id=" + id + " ]";
+        return "entity.Training[ id=" + id + " ], " + 
+                creationDate + ", " + 
+                training + ", " + 
+                coach + ", "+
+                recipient;
     }
     
 }
